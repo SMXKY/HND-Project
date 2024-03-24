@@ -1,0 +1,23 @@
+* {
+  font-family: roboto, arial;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  transition: 0.15s;
+}
+
+:root {
+  --background-color: #fafbfc;
+  --box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  --call-to-action: #287f71;
+  --faint-black: #2e2e2e;
+}
+
+body {
+  background-color: var(--background-color);
+  padding-bottom: 50rem;
+}
+
+img {
+  object-fit: cover;
+}
