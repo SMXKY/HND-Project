@@ -11,11 +11,17 @@
   --box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
   --call-to-action: #287f71;
   --faint-black: #2e2e2e;
+  --sub-color: #9ba4b1;
+  --down-color: #ce485c;
+  --up-color: #287f71;
+  --down-color-shade: #f5dbdf;
+  --up-color-shade: #d8f2ee;
+  --sub-sub-color: #c7cdd8;
 }
 
 body {
   background-color: var(--background-color);
-  padding-bottom: 50rem;
+  padding: 5rem 0rem 50rem 0rem;
 }
 
 img {

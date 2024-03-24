@@ -6,7 +6,7 @@ export const sales = [
     date: {
       day: 15,
       month: 3,
-      year: 2023,
+      year: 2024,
     },
     customerId: 29,
   },
@@ -71,7 +71,7 @@ export const sales = [
     units: 7,
     date: {
       day: 12,
-      month: 8,
+      month: 3,
       year: 2024,
     },
     customerId: 47,
@@ -126,7 +126,7 @@ export const sales = [
     units: 3,
     date: {
       day: 23,
-      month: 1,
+      month: 3,
       year: 2024,
     },
     customerId: 18,
@@ -192,8 +192,8 @@ export const sales = [
     units: 5,
     date: {
       day: 13,
-      month: 11,
-      year: 2022,
+      month: 3,
+      year: 2024,
     },
     customerId: 20,
   },
@@ -236,8 +236,8 @@ export const sales = [
     units: 7,
     date: {
       day: 22,
-      month: 5,
-      year: 2023,
+      month: 2,
+      year: 2024,
     },
     customerId: 5,
   },
@@ -247,8 +247,8 @@ export const sales = [
     units: 4,
     date: {
       day: 15,
-      month: 1,
-      year: 2022,
+      month: 3,
+      year: 2024,
     },
     customerId: 40,
   },
@@ -258,8 +258,8 @@ export const sales = [
     units: 8,
     date: {
       day: 9,
-      month: 8,
-      year: 2023,
+      month: 2,
+      year: 2024,
     },
     customerId: 16,
   },
@@ -269,7 +269,7 @@ export const sales = [
     units: 2,
     date: {
       day: 17,
-      month: 4,
+      month: 3,
       year: 2024,
     },
     customerId: 31,
@@ -302,8 +302,8 @@ export const sales = [
     units: 6,
     date: {
       day: 20,
-      month: 12,
-      year: 2023,
+      month: 2,
+      year: 2024,
     },
     customerId: 12,
   },
@@ -313,7 +313,7 @@ export const sales = [
     units: 3,
     date: {
       day: 7,
-      month: 7,
+      month: 2,
       year: 2024,
     },
     customerId: 42,
@@ -324,8 +324,8 @@ export const sales = [
     units: 7,
     date: {
       day: 28,
-      month: 6,
-      year: 2022,
+      month: 3,
+      year: 2024,
     },
     customerId: 22,
   },
@@ -347,7 +347,7 @@ export const sales = [
     saleId: 32,
     productId: 3,
     units: 23,
-    date: { day: 9, month: 5, year: 2024 },
+    date: { day: 9, month: 2, year: 2024 },
     customerId: 28,
   },
   {
@@ -368,7 +368,7 @@ export const sales = [
     saleId: 35,
     productId: 9,
     units: 75,
-    date: { day: 15, month: 6, year: 2023 },
+    date: { day: 15, month: 2, year: 2024 },
     customerId: 48,
   },
   {
@@ -396,14 +396,14 @@ export const sales = [
     saleId: 39,
     productId: 10,
     units: 78,
-    date: { day: 19, month: 10, year: 2022 },
+    date: { day: 19, month: 3, year: 2024 },
     customerId: 19,
   },
   {
     saleId: 40,
     productId: 11,
     units: 29,
-    date: { day: 11, month: 3, year: 2023 },
+    date: { day: 11, month: 3, year: 2024 },
     customerId: 20,
   },
   {
@@ -431,14 +431,14 @@ export const sales = [
     saleId: 44,
     productId: 6,
     units: 50,
-    date: { day: 16, month: 10, year: 2022 },
+    date: { day: 16, month: 3, year: 2024 },
     customerId: 3,
   },
   {
     saleId: 45,
     productId: 1,
     units: 77,
-    date: { day: 10, month: 7, year: 2022 },
+    date: { day: 10, month: 2, year: 2024 },
     customerId: 49,
   },
   {
@@ -452,7 +452,7 @@ export const sales = [
     saleId: 47,
     productId: 7,
     units: 15,
-    date: { day: 18, month: 6, year: 2023 },
+    date: { day: 18, month: 3, year: 2024 },
     customerId: 41,
   },
   {
@@ -473,7 +473,7 @@ export const sales = [
     saleId: 50,
     productId: 5,
     units: 67,
-    date: { day: 8, month: 1, year: 2024 },
+    date: { day: 8, month: 3, year: 2024 },
     customerId: 21,
   },
   {
@@ -487,14 +487,14 @@ export const sales = [
     saleId: 52,
     productId: 1,
     units: 99,
-    date: { day: 27, month: 6, year: 2023 },
+    date: { day: 27, month: 2, year: 2024 },
     customerId: 36,
   },
   {
     saleId: 53,
     productId: 0,
     units: 25,
-    date: { day: 21, month: 2, year: 2023 },
+    date: { day: 21, month: 2, year: 2024 },
     customerId: 10,
   },
   {
@@ -515,7 +515,7 @@ export const sales = [
     saleId: 56,
     productId: 3,
     units: 14,
-    date: { day: 26, month: 12, year: 2022 },
+    date: { day: 26, month: 2, year: 2024 },
     customerId: 25,
   },
   {
@@ -529,7 +529,7 @@ export const sales = [
     saleId: 58,
     productId: 5,
     units: 33,
-    date: { day: 11, month: 1, year: 2024 },
+    date: { day: 11, month: 3, year: 2024 },
     customerId: 48,
   },
   {
@@ -543,7 +543,7 @@ export const sales = [
     saleId: 60,
     productId: 11,
     units: 62,
-    date: { day: 22, month: 8, year: 2022 },
+    date: { day: 22, month: 2, year: 2024 },
     customerId: 4,
   },
   {
@@ -592,7 +592,7 @@ export const sales = [
     saleId: 67,
     productId: 9,
     units: 43,
-    date: { day: 22, month: 5, year: 2023 },
+    date: { day: 22, month: 3, year: 2024 },
     customerId: 19,
   },
   {
@@ -606,7 +606,7 @@ export const sales = [
     saleId: 69,
     productId: 6,
     units: 87,
-    date: { day: 10, month: 8, year: 2023 },
+    date: { day: 10, month: 2, year: 2024 },
     customerId: 9,
   },
 ];
