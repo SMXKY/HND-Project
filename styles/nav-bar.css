@@ -152,10 +152,6 @@
   box-shadow: var(--box-shadow);
 }
 
-.show-side-bar {
-  left: 0px;
-}
-
 .close-side-bar-btn {
   background: none;
   border: none;
@@ -213,6 +209,10 @@
 .profile-holder-side-bar {
   margin-top: 0.8rem;
   padding: 0rem 15% 0rem 2rem;
+}
+
+.show-side-bar {
+  left: 0px;
 }
 
 @media (max-width: 1214px) {
