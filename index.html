@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/generall.css" />
+    <link rel="stylesheet" href="styles/nav-bar.css" />
+  </head>
+  <body>
+    <nav class="nav-bar nav-bar-off">
+      <p class="skypicss-logo">SKYPIICS</p>
+
+      <div class="navigation-menu">
+        <a href="">
+          <div class="link-holder">
+            <p class="link-text">Dashboard</p>
+            <span class="link-is-on"></span>
+          </div>
+        </a>
+
+        <a href="">
+          <div class="link-holder off-link">
+            <p class="link-text">Sessions</p>
+            <span class="link-is-on link-is-off"></span>
+          </div>
+        </a>
+
+        <a href="">
+          <div class="link-holder off-link">
+            <p class="link-text">Products and Services</p>
+            <span class="link-is-on link-is-off"></span>
+          </div>
+        </a>
+      </div>
+
+      <div class="search-and-profile">
+        <a href="">
+          <button class="search-btn">
+            <img
+              src="images-and-icons/icons/search-icon.png"
+              alt="search-icon"
+            />
+          </button>
+        </a>
+
+        <div class="profile-holder">
+          <img
+            src="images-and-icons/mr-ngwa.jpg"
+            class="user-profile-picture"
+            alt="profile-img"
+          />
+          <div class="profile-info">
+            <p class="user-name">Mr. Ngwa Paul</p>
+            <p class="user-description">CEO</p>
+          </div>
+          <img
+            src="images-and-icons/icons/down-arrow.png"
+            class="drop-down-profile-icon"
+            alt="drop-down-icon"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-nav nav-bar">
+      <p class="skypicss-logo">SKYPIICS</p>
+
+      <button class="menu-btn js-open-sidebar">
+        <img src="images-and-icons/icons/menu (1).png" alt="menu-icon" />
+      </button>
+    </div>
+
+    <div class="side-bar js-side-bar-holder">
+      <div class="top-bar-side-bar">
+        <button class="close-side-bar-btn js-close-side-bar">
+          <img
+            src="images-and-icons/icons/close (1).png"
+            alt="close-side-bar-icon"
+          />
+        </button>
+      </div>
+
+      <div class="sidbar-btns">
+        <a href="">
+          <div class="link-holder link-holder-side side-bar-btn-on">
+            <p class="link-text link-text-side-bar">Dashboard</p>
+            <span class="link-is-on"></span>
+          </div>
+        </a>
+
+        <a href="">
+          <div class="link-holder link-holder-side">
+            <p class="link-text link-text-side-bar">Sessions</p>
+            <span class="link-is-on link-is-off"></span>
+          </div>
+        </a>
+
+        <a href="">
+          <div class="link-holder link-holder-side">
+            <p class="link-text link-text-side-bar">Products and Services</p>
+            <span class="link-is-on link-is-off"></span>
+          </div>
+        </a>
+      </div>
+
+      <a href="" class="search-link">
+        <div class="side-search-btn-holder">
+          <button class="search-btn">
+            <img
+              src="images-and-icons/icons/search-icon.png"
+              alt="search-icon"
+            />
+          </button>
+
+          <p>Search</p>
+        </div>
+      </a>
+
+      <div class="profile-holder-side-bar">
+        <div class="profile-holder">
+          <img
+            src="images-and-icons/mr-ngwa.jpg"
+            class="user-profile-picture"
+            alt="profile-img"
+          />
+          <div class="profile-info">
+            <p class="user-name">Mr. Ngwa Paul</p>
+            <p class="user-description">CEO</p>
+          </div>
+          <img
+            src="images-and-icons/icons/down-arrow.png"
+            class="drop-down-profile-icon"
+            alt="drop-down-icon"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/main.js" type="module"></script>
+  </body>
+</html>
