@@ -1,4 +1,5 @@
 import { totalIncomeCalculator } from "../Backend/modules/totalIncome.js";
+import { topProducts } from "../Backend/modules/topProductis.js";
 
 export function renderDashboardDAta() {
   const cardData = totalIncomeCalculator();
@@ -49,4 +50,6 @@ export function renderDashboardDAta() {
   });
 
   document.querySelector(".js-data-cards").innerHTML = cardHtml;
+
+  topProducts();
 }
