@@ -1,7 +1,7 @@
 export const sales = [
   {
     saleId: 0,
-    productId: 11,
+    productId: 0,
     units: 5,
     date: {
       day: 15,
@@ -100,7 +100,7 @@ export const sales = [
   },
   {
     saleId: 9,
-    productId: 8,
+    productId: 6,
     units: 9,
     date: {
       day: 18,
@@ -111,7 +111,7 @@ export const sales = [
   },
   {
     saleId: 10,
-    productId: 7,
+    productId: 0,
     units: 6,
     date: {
       day: 9,
@@ -144,7 +144,7 @@ export const sales = [
   },
   {
     saleId: 13,
-    productId: 10,
+    productId: 0,
     units: 2,
     date: {
       day: 6,
@@ -199,7 +199,7 @@ export const sales = [
   },
   {
     saleId: 18,
-    productId: 5,
+    productId: 0,
     units: 9,
     date: {
       day: 1,
@@ -254,7 +254,7 @@ export const sales = [
   },
   {
     saleId: 23,
-    productId: 10,
+    productId: 6,
     units: 8,
     date: {
       day: 9,
@@ -309,7 +309,7 @@ export const sales = [
   },
   {
     saleId: 28,
-    productId: 9,
+    productId: 6,
     units: 3,
     date: {
       day: 7,
@@ -366,7 +366,7 @@ export const sales = [
   },
   {
     saleId: 35,
-    productId: 9,
+    productId: 0,
     units: 75,
     date: { day: 15, month: 2, year: 2024 },
     customerId: 48,
@@ -471,7 +471,7 @@ export const sales = [
   },
   {
     saleId: 50,
-    productId: 5,
+    productId: 6,
     units: 67,
     date: { day: 8, month: 3, year: 2024 },
     customerId: 21,
@@ -520,7 +520,7 @@ export const sales = [
   },
   {
     saleId: 57,
-    productId: 9,
+    productId: 0,
     units: 67,
     date: { day: 16, month: 9, year: 2023 },
     customerId: 13,
@@ -541,7 +541,7 @@ export const sales = [
   },
   {
     saleId: 60,
-    productId: 11,
+    productId: 0,
     units: 62,
     date: { day: 22, month: 2, year: 2024 },
     customerId: 4,
@@ -575,7 +575,7 @@ export const sales = [
     customerId: 42,
   },
   {
-    saleId: 65,
+    saleId: 0,
     productId: 3,
     units: 85,
     date: { day: 7, month: 10, year: 2022 },
@@ -597,14 +597,14 @@ export const sales = [
   },
   {
     saleId: 68,
-    productId: 11,
+    productId: 6,
     units: 29,
     date: { day: 17, month: 11, year: 2022 },
     customerId: 10,
   },
   {
     saleId: 69,
-    productId: 6,
+    productId: 0,
     units: 87,
     date: { day: 10, month: 2, year: 2024 },
     customerId: 9,

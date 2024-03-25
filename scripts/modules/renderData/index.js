@@ -51,5 +51,32 @@ export function renderDashboardDAta() {
 
   document.querySelector(".js-data-cards").innerHTML = cardHtml;
 
-  topProducts();
+  const rankedProducts = topProducts().reverse();
+
+  let hofHtml = "";
+
+  for (let i = 0; i < 4; i++) {
+    hofHtml += `
+      <a href="" class="hof-product-link">
+        <div class="hof-template">
+          <img
+            src="images-and-icons/products/${rankedProducts[i].id}.jpg"
+            alt="product-image"
+            class="hof-product-img"
+          />
+          <div class="hof-details">
+            <div class="hof-template-numbers">
+              <p class="hof-product-name">${rankedProducts[i].name}</p>
+              <p class="hof-product-percentage">${rankedProducts[i].percent}% of sales</p>
+            </div>
+            <div class="hof-percentage-holder">
+              <div class="hof-percentage-keeper" style="width: ${rankedProducts[i].percent}%"></div>
+            </div>
+          </div>
+        </div>
+      </a>
+    `;
+  }
+
+  document.querySelector(".js-hof-entries").innerHTML = hofHtml;
 }

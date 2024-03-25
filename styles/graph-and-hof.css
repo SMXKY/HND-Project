@@ -69,6 +69,7 @@
   border-radius: 50%;
   object-fit: cover;
   margin-right: 1rem;
+  box-shadow: var(--box-shadow);
 }
 
 .hof-percentage-holder {
