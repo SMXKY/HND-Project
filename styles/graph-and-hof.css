@@ -95,7 +95,7 @@
 .hof-template-numbers {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
   margin-bottom: 0.5rem;
 }
 

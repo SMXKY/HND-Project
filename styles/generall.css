@@ -18,11 +18,12 @@
   --up-color-shade: #d8f2ee;
   --sub-sub-color: #c7cdd8;
   --percentage-color: #f1f2f5;
+  --grid-bottom: #eff1f3;
 }
 
 body {
   background-color: var(--background-color);
-  padding: 5rem 0rem 50rem 0rem;
+  padding: 5rem 0rem 5rem 0rem;
 }
 
 img {

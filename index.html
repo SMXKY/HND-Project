@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="styles/nav-bar.css" />
     <link rel="stylesheet" href="styles/data-cards.css" />
     <link rel="stylesheet" href="styles/graph-and-hof.css" />
+    <link rel="stylesheet" href="styles/recent-products-and-gear.css" />
   </head>
   <body>
     <nav class="nav-bar nav-bar-off">
@@ -150,7 +151,7 @@
     <section class="graph-and-hall-of-fame">
       <div class="graph-and-hall-of-fame-graph-section">
         <div class="graph-head">
-          <p class="graph-head-top">Sales performance</p>
+          <p class="graph-head-top isHeading">Sales performance</p>
           <p class="graph-head-bottom">New products</p>
         </div>
 
@@ -160,11 +161,49 @@
       </div>
       <div class="graph-and-hall-of-fame-hof-section">
         <div class="graph-head hot-head">
-          <p class="graph-head-top">Top selling products</p>
+          <p class="graph-head-top isHeading">Top selling products</p>
           <p class="graph-head-bottom">Showing data for top selling products</p>
         </div>
 
         <div class="hof-entries js-hof-entries"></div>
+      </div>
+    </section>
+
+    <section class="table-and-gear-section">
+      <div class="recent-products-table">
+        <div class="recent-products-table-head">
+          <p class="recent-product-table-title isHeading">Recent sales</p>
+
+          <a href="" class="view-all-sales-link">
+            <div class="view-all-sales">
+              <p>view more</p>
+              <img src="images-and-icons/icons/chevron.png" alt="" />
+            </div>
+          </a>
+        </div>
+
+        <div class="products-sales-recent-grid">
+          <div class="products-sales-recent-grid-head">
+            <p>Product</p>
+            <p class="responsive-table">Price</p>
+            <p class="responsive-table2">Units</p>
+            <p>Date</p>
+          </div>
+
+          <div
+            class="products-sales-recent-grid-actual-grid js-recent-sales-grid"
+          ></div>
+        </div>
+      </div>
+      <div class="total-number-of-customers">
+        <div class="graph-head hot-head half-dougnut">
+          <p class="graph-head-top isHeading">Customers</p>
+          <p class="graph-head-bottom">An overview of all customers</p>
+        </div>
+
+        <div class="doughnut-holder">
+          <canvas id="customer-doughnut"></canvas>
+        </div>
       </div>
     </section>
 
@@ -196,6 +235,40 @@
           maintainAspectRatio: false,
         },
       });
+
+      const halfDoughnut = document.getElementById("customer-doughnut");
+
+      const data = {
+        labels: ["New customers", "Returning Customers"],
+        datasets: [
+          {
+            label: "Weekly Sales",
+            data: [28, 22],
+            backgroundColor: ["#287f71", "#E3E8EF"],
+            borderColor: ["#287f71", "#E3E8EF"],
+            borderWidth: 1,
+            cutout: "85%",
+            circumference: 180,
+            rotation: 270,
+          },
+        ],
+      };
+
+      // config
+      const config = {
+        type: "doughnut",
+        data,
+        options: {
+          maintainAspectRatio: false,
+        },
+      };
+
+      // render init block
+      const doughnut = new Chart(halfDoughnut, config);
+
+      // Instantly assign Chart.js version
+      const chartVersion = document.getElementById("chartVersion");
+      chartVersion.innerText = Chart.version;
     </script>
   </body>
 </html>

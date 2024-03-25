@@ -1,5 +1,7 @@
 import { totalIncomeCalculator } from "../Backend/modules/totalIncome.js";
 import { topProducts } from "../Backend/modules/topProductis.js";
+import { recentSales } from "../Backend/modules/recent-sales.js";
+import { productsAndservices } from "../Backend/database/products.js";
 
 export function renderDashboardDAta() {
   const cardData = totalIncomeCalculator();
@@ -79,4 +81,50 @@ export function renderDashboardDAta() {
   }
 
   document.querySelector(".js-hof-entries").innerHTML = hofHtml;
+
+  const recentSalesRecords = recentSales();
+  let recentSalesHtml = "";
+
+  for (let i = 0; i < 3; i++) {
+    let day = Number(recentSalesRecords[i].date.day);
+    let month = Number(recentSalesRecords[i].date.month);
+
+    if (day < 10) {
+      day = "0" + day;
+    }
+
+    if (month < 10) {
+      month = "0" + month;
+    }
+
+    recentSalesHtml += `
+      <a href="" class="view-all-sales-link">
+        <div class="products-sales-recent-grid-actual-grid-entry">
+          <div class="product-name-and-img">
+            <img
+              src="images-and-icons/products/${
+                recentSalesRecords[i].productId
+              }.jpg"
+              alt="product-img"
+              class="recent-sale-product-img"
+            />
+
+            <p>${
+              productsAndservices[recentSalesRecords[i].productId].productName
+            }</p>
+          </div>
+
+          <p class="responsive-table">${Number(
+            productsAndservices[recentSalesRecords[i].productId].productPrice
+          ).toLocaleString()} XAF</p>
+
+          <p class="responsive-table2">${recentSalesRecords[i].units}</p>
+
+          <p>${day}/${month}/${recentSalesRecords[i].date.year}</p>
+        </div>
+      </a>
+    `;
+  }
+
+  document.querySelector(".js-recent-sales-grid").innerHTML = recentSalesHtml;
 }
