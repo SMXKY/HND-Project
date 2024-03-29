@@ -1,3 +1,6 @@
+import { deleteSession } from "./delete-session.js";
+import { renderDatasets } from "./render-datasets.js";
+
 export function rederSessions(array) {
   let sessionHtml = "";
 
@@ -27,7 +30,7 @@ export function rederSessions(array) {
       sessionHtml += `
       <a href="#" class="view-all-sales-link">
         <div class="products-sales-recent-grid-actual-grid-entry sessions-grid-entry">
-          <div class="product-name-and-img">
+          <div class="product-name-and-img js-session-link" data-sessionid = "${session.id}">
             <p>${session.sessionName}</p>
           </div>
   
@@ -37,7 +40,7 @@ export function rederSessions(array) {
   
           <p>${dayC}/${monthC}/${session.dateOfCreation.year}</p>
   
-          <button class="delete-session-btn"><img src="images-and-icons/icons/delete (1).png" alt="" /></button>
+          <button class="delete-session-btn js-delete-session-btn" data-sessionId="${session.id}"><img src="images-and-icons/icons/delete (1).png" alt="" /></button>
         </div>
       </a>
     `;
@@ -54,4 +57,6 @@ export function rederSessions(array) {
   }
 
   document.querySelector(".js-sessions-grid").innerHTML = sessionHtml;
+  deleteSession();
+  renderDatasets();
 }

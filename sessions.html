@@ -145,7 +145,7 @@
       </div>
     </div>
 
-    <section class="session-table">
+    <section class="session-table js-all-sessions-table">
       <div class="recent-products-table sessions-all-table">
         <div class="recent-products-table-head">
           <p class="recent-product-table-title isHeading sesseion-heading">
@@ -234,6 +234,65 @@
         <p class="alert-message">There was an error</p>
       </div>
     </div>
+
+    <section
+      class="datasets-table js-datasets-all-table session-table hide-sessions-table"
+    >
+      <div class="recent-products-table sessions-all-table">
+        <div class="recent-products-table-head">
+          <div class="left-dataset-head">
+            <button class="go-back-to-sessions js-go-back-to-sessions">
+              <img src="images-and-icons/icons/back.png" alt="" />
+            </button>
+
+            <p
+              class="recent-product-table-title isHeading sesseion-heading js-dataset-page-title dataset-title-text"
+            >
+              Dataset
+            </p>
+          </div>
+
+          <div class="session-options">
+            <button class="add-session-btn js-open-create-session">
+              <img src="images-and-icons/icons/add.png" alt="filter-icon" />
+            </button>
+
+            <div class="view-all-sales filter-sessions js-open-filter">
+              <p>Filter</p>
+              <img src="images-and-icons/icons/filter (1).png" alt="" />
+            </div>
+
+            <div class="filter-select js-filter-holder">
+              <div class="close-filter">
+                <button class="close-filter-btn js-close-the-filter-btn">
+                  <img src="images-and-icons/icons/close-red.png" alt="" />
+                </button>
+              </div>
+              <p class="js-see-all-sessions">All</p>
+              <p class="js-sort-last-edited">This month</p>
+              <p class="js-sort-this-year-sessions">This year</p>
+              <p class="js-sort-sessions-today">Today</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-sales-recent-grid">
+          <div
+            class="products-sales-recent-grid-head new-session-grid data-set-grid-head"
+          >
+            <p>Dataset</p>
+            <p class="hide-data-second">Date of creation</p>
+            <p class="hide-data-first">Time</p>
+            <p></p>
+            <p></p>
+          </div>
+
+          <div
+            class="products-sales-recent-grid-actual-grid js-dataset-grid"
+          ></div>
+        </div>
+      </div>
+    </section>
 
     <button class="dummy" style="display: none" id="js-this-buton"></button>
     <script src="scripts/sessions.js" type="module"></script>
