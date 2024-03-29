@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Sessions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,9 +12,8 @@
     />
     <link rel="stylesheet" href="styles/generall.css" />
     <link rel="stylesheet" href="styles/nav-bar.css" />
-    <link rel="stylesheet" href="styles/data-cards.css" />
-    <link rel="stylesheet" href="styles/graph-and-hof.css" />
     <link rel="stylesheet" href="styles/recent-products-and-gear.css" />
+    <link rel="stylesheet" href="styles/session.css" />
   </head>
   <body>
     <nav class="nav-bar nav-bar-off">
@@ -22,16 +21,16 @@
 
       <div class="navigation-menu">
         <a href="/index.html">
-          <div class="link-holder">
+          <div class="link-holder off-link">
             <p class="link-text">Dashboard</p>
-            <span class="link-is-on"></span>
+            <span class="link-is-on link-is-off"></span>
           </div>
         </a>
 
         <a href="/sessions.html">
-          <div class="link-holder off-link">
+          <div class="link-holder">
             <p class="link-text">Sessions</p>
-            <span class="link-is-on link-is-off"></span>
+            <span class="link-is-on"></span>
           </div>
         </a>
 
@@ -94,14 +93,14 @@
         <a href="/index.html">
           <div class="link-holder link-holder-side side-bar-btn-on">
             <p class="link-text link-text-side-bar">Dashboard</p>
-            <span class="link-is-on"></span>
+            <span class="link-is-on link-is-off"></span>
           </div>
         </a>
 
         <a href="/sessions.html">
           <div class="link-holder link-holder-side">
             <p class="link-text link-text-side-bar">Sessions</p>
-            <span class="link-is-on link-is-off"></span>
+            <span class="link-is-on"></span>
           </div>
         </a>
 
@@ -146,129 +145,97 @@
       </div>
     </div>
 
-    <section class="data-cards js-data-cards"></section>
-
-    <section class="graph-and-hall-of-fame">
-      <div class="graph-and-hall-of-fame-graph-section">
-        <div class="graph-head">
-          <p class="graph-head-top isHeading">Sales performance</p>
-          <p class="graph-head-bottom">New products</p>
-        </div>
-
-        <div class="graph-holder">
-          <canvas id="productLineChart"></canvas>
-        </div>
-      </div>
-      <div class="graph-and-hall-of-fame-hof-section">
-        <div class="graph-head hot-head">
-          <p class="graph-head-top isHeading">Top selling products</p>
-          <p class="graph-head-bottom">Showing data for top selling products</p>
-        </div>
-
-        <div class="hof-entries js-hof-entries"></div>
-      </div>
-    </section>
-
-    <section class="table-and-gear-section">
-      <div class="recent-products-table">
+    <section class="session-table">
+      <div class="recent-products-table sessions-all-table">
         <div class="recent-products-table-head">
-          <p class="recent-product-table-title isHeading">Recent sales</p>
+          <p class="recent-product-table-title isHeading sesseion-heading">
+            Sessions
+          </p>
 
-          <a href="" class="view-all-sales-link">
-            <div class="view-all-sales">
-              <p>view more</p>
-              <img src="images-and-icons/icons/chevron.png" alt="" />
+          <div class="session-options">
+            <button class="add-session-btn js-open-create-session">
+              <img src="images-and-icons/icons/add.png" alt="filter-icon" />
+            </button>
+
+            <div class="view-all-sales filter-sessions js-open-filter">
+              <p>Filter</p>
+              <img src="images-and-icons/icons/filter (1).png" alt="" />
             </div>
-          </a>
+
+            <div class="filter-select js-filter-holder">
+              <div class="close-filter">
+                <button class="close-filter-btn js-close-the-filter-btn">
+                  <img src="images-and-icons/icons/close-red.png" alt="" />
+                </button>
+              </div>
+              <p class="js-see-all-sessions">All</p>
+              <p class="js-sort-last-edited">This month</p>
+              <p class="js-sort-this-year-sessions">This year</p>
+              <p class="js-sort-sessions-today">Today</p>
+            </div>
+          </div>
         </div>
 
         <div class="products-sales-recent-grid">
-          <div class="products-sales-recent-grid-head">
-            <p>Product</p>
-            <p class="responsive-table">Price</p>
-            <p class="responsive-table2">Units</p>
-            <p>Date</p>
+          <div class="products-sales-recent-grid-head new-session-grid">
+            <p>Session name</p>
+            <p class="responsive-table hide-datasets">Datasets</p>
+            <p class="responsive-table2">Last edited</p>
+            <p>Date of creation</p>
+            <p></p>
           </div>
 
           <div
-            class="products-sales-recent-grid-actual-grid js-recent-sales-grid"
+            class="products-sales-recent-grid-actual-grid js-sessions-grid"
           ></div>
-        </div>
-      </div>
-      <div class="total-number-of-customers">
-        <div class="graph-head hot-head half-dougnut">
-          <p class="graph-head-top isHeading">Customers</p>
-          <p class="graph-head-bottom">An overview of all customers</p>
-        </div>
-
-        <div class="doughnut-holder">
-          <canvas id="customer-doughnut"></canvas>
         </div>
       </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="scripts/main.js" type="module"></script>
-    <script>
-      const lineChart = document.getElementById("productLineChart");
+    <div class="create-session-overlay js-create-session-holder">
+      <div class="create-session-form">
+        <div class="create-session-head">
+          <button class="close-create-session-form js-close-create-session-btn">
+            <img src="images-and-icons/icons/close-red.png" alt="" />
+          </button>
+        </div>
 
-      const chart = new Chart(lineChart, {
-        type: "line",
-        data: {
-          labels: ["Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sat"],
-          datasets: [
-            {
-              label: "DELL Latitude E5450",
-              backgroundColor: "#287f71",
-              borderColor: "#287f71",
-              data: [500, 25, 99, 90, 90, 50, 60],
-            },
-            {
-              label: "HP Slim Desktop S01-pF4055t PC",
-              backgroundColor: "#EB862A",
-              borderColor: "#EB862A",
-              data: [123, 205, 99, 90, 450, 250, 250],
-            },
-          ],
-        },
-        options: {
-          maintainAspectRatio: false,
-        },
-      });
+        <p class="create-session-title">Create session</p>
 
-      const halfDoughnut = document.getElementById("customer-doughnut");
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Session name"
+          class="create-session-input js-session-name-input"
+        />
 
-      const data = {
-        labels: ["New customers", "Returning Customers"],
-        datasets: [
-          {
-            label: "Weekly Sales",
-            data: [28, 22],
-            backgroundColor: ["#287f71", "#E3E8EF"],
-            borderColor: ["#287f71", "#E3E8EF"],
-            borderWidth: 1,
-            cutout: "85%",
-            circumference: 180,
-            rotation: 270,
-          },
-        ],
-      };
+        <div class="create-session-foot">
+          <button class="create-session-btn js-create-session-btn">
+            Create
+          </button>
+        </div>
+      </div>
+    </div>
 
-      // config
-      const config = {
-        type: "doughnut",
-        data,
-        options: {
-          maintainAspectRatio: false,
-        },
-      };
+    <div class="function-allert js-function-allert">
+      <div class="alert-content">
+        <div class="create-session-head">
+          <button
+            class="close-create-session-form close-alert js-close-alert-btn"
+          >
+            <img
+              src="images-and-icons/icons/close-grean.png"
+              class="js-close-aleart-img"
+              alt=""
+            />
+          </button>
+        </div>
+        <p class="alert-message">There was an error</p>
+      </div>
+    </div>
 
-      // render init block
-      const doughnut = new Chart(halfDoughnut, config);
-
-      // Instantly assign Chart.js version
-      const chartVersion = document.getElementById("chartVersion");
-      chartVersion.innerText = Chart.version;
-    </script>
+    <button class="dummy" style="display: none" id="js-this-buton"></button>
+    <script src="scripts/sessions.js" type="module"></script>
   </body>
 </html>

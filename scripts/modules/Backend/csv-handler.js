@@ -1,5 +1,7 @@
 import { frequency } from "./modules/frequency-and-percentage/frequencyAndPercentage.js";
 import { centralTendency } from "./modules/location/centralTendency.js";
+import { percentile } from "./modules/dispersion-and-variation/percentile.js";
+
 export function csvHandler() {
   let csvData = [];
   document.querySelector(".js-submit-csv").addEventListener("submit", (e) => {
@@ -16,7 +18,7 @@ export function csvHandler() {
 
         console.log(csvData);
 
-        centralTendency(csvData.data);
+        percentile(results.data, 25);
       },
     });
   });

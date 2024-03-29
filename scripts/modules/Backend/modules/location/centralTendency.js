@@ -3,7 +3,6 @@ import { frequency } from "../frequency-and-percentage/frequencyAndPercentage.js
 export function centralTendency(data) {
   const freqData = frequency(data);
   const solution = {};
-  console.log(freqData);
 
   const keys = Object.keys(freqData);
 
@@ -15,42 +14,109 @@ export function centralTendency(data) {
 
   keys.forEach((set) => {
     const data = freqData[set];
+    const compare = data.length;
+    let mode = [];
+    let mean = null;
+    let median = null;
+    let variance = null;
+    let standardError = null;
 
+    //Mean calculations
     if (!isNaN(Number(data[data.length - 1].val))) {
-      console.log(set);
       let xf = 0;
       let sumOfFrequencies = 0;
 
-      const compare = data.length;
-      let mode = [];
-
-      //Mean
       data.forEach((dataset) => {
         xf += Number(dataset.val) * Number(dataset.freq);
         sumOfFrequencies += Number(dataset.freq);
       });
 
-      //Mode
-      data.forEach((dataset) => {
-        let check = 0;
+      mean = Number((xf / sumOfFrequencies).toFixed(2));
 
-        data.forEach((comp) => {
-          if (dataset.freq >= comp.freq) {
-            check++;
-          }
-        });
+      //Median calculation
+      function compareValues(a, b) {
+        return a.val - b.val;
+      }
 
-        if (check === compare) {
-          mode.push({
-            val: dataset.val,
-            freq: dataset.freq,
-          });
+      const sortedValues = data.sort(compareValues);
+
+      let totalFreq = 0;
+      let cf = 0;
+      const medArray = [];
+
+      sortedValues.forEach((medSet) => {
+        cf += medSet.freq;
+        medSet.cf = cf;
+        totalFreq += medSet.freq;
+
+        for (let i = 0; i < medSet.freq; i++) {
+          medArray.push(Number(medSet.val));
         }
       });
 
-      const mean = (xf / sumOfFrequencies).toFixed(2);
-      console.log(mean);
-      console.log(mode);
+      if (totalFreq % 2 !== 0) {
+        median = medArray[(totalFreq + 1) / 2 - 1];
+      } else {
+        median =
+          (medArray[totalFreq / 2 - 1] + medArray[totalFreq / 2 + 1]) / 2;
+      }
+
+      //Variance
+      const varianceTable = [];
+
+      medArray.forEach((medVal) => {
+        varianceTable.push({
+          val: medVal,
+          xiCheck: medVal - mean,
+          xiSquared: (medVal - mean) * (medVal - mean),
+        });
+      });
+
+      let sumOfxiSquared = 0;
+
+      varianceTable.forEach((xi) => {
+        sumOfxiSquared += xi.xiSquared;
+      });
+
+      variance = Number(
+        (sumOfxiSquared / (varianceTable.length - 1)).toFixed(2)
+      );
+
+      standardError = Number(
+        (
+          Number(Math.sqrt(variance).toFixed(2)) / Math.sqrt(medArray.length)
+        ).toFixed(2)
+      );
     }
+
+    //Mode calculations
+    data.forEach((dataset) => {
+      let check = 0;
+
+      data.forEach((comp) => {
+        if (dataset.freq >= comp.freq) {
+          check++;
+        }
+      });
+
+      if (check === compare) {
+        mode.push({
+          val: dataset.val,
+          freq: dataset.freq,
+        });
+      }
+    });
+
+    solution[set] = {
+      dataSet: set,
+      mean: mean,
+      median: median,
+      mode: mode,
+      variance: variance,
+      standardDeviation: Number(Math.sqrt(variance).toFixed(2)),
+      standardError: standardError,
+    };
   });
+  console.log(solution);
+  return solution;
 }
