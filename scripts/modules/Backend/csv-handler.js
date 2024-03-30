@@ -1,12 +1,14 @@
 import { frequency } from "./modules/frequency-and-percentage/frequencyAndPercentage.js";
 import { centralTendency } from "./modules/location/centralTendency.js";
 import { percentile } from "./modules/dispersion-and-variation/percentile.js";
+import { cretedataset } from "../renderData/create-dataset-holder.js";
+import { alert } from "../renderData/alert.js";
 
-export function csvHandler() {
+export function csvHandler(id, render) {
   let csvData = [];
-  document.querySelector(".js-submit-csv").addEventListener("submit", (e) => {
+  document.querySelector(".js-submit-csv").addEventListener("click", (e) => {
     e.preventDefault();
-    Papa.parse(document.getElementById("js-uploaded-file").files[0], {
+    csvData = Papa.parse(document.getElementById("js-uploaded-file").files[0], {
       download: true,
 
       header: true,
@@ -14,11 +16,7 @@ export function csvHandler() {
       skipEmptyLines: true,
 
       complete: (results) => {
-        csvData = results;
-
-        console.log(csvData);
-
-        percentile(results.data, 25);
+        cretedataset(id, results.data, render);
       },
     });
   });

@@ -1,6 +1,7 @@
 import { sessions } from "../Backend/database/sessions.js";
 import { alert } from "./alert.js";
 import { rederSessions } from "./render-sessions.js";
+import { datasets } from "../Backend/database/datasets.js";
 
 export function createSession() {
   document
@@ -18,6 +19,8 @@ export function createSession() {
         });
 
         if (alreadyExist === false) {
+          const seshId = sessions.length;
+
           sessions.push({
             id: sessions.length,
             sessionName: sessionName,
@@ -34,11 +37,18 @@ export function createSession() {
             },
           });
 
+          datasets.push({
+            id: seshId,
+            sessionId: seshId,
+            datasets: [],
+          });
+
           document.querySelector(".js-session-name-input").value = "";
 
           rederSessions(sessions);
 
           localStorage.setItem("sessions-db", JSON.stringify(sessions));
+          localStorage.setItem("datasetsDb", JSON.stringify(datasets));
 
           document
             .querySelector(".js-create-session-holder")

@@ -4,6 +4,7 @@ import { rederSessions } from "./modules/renderData/render-sessions.js";
 import { popUpAnimation } from "./modules/Utilities/popUpAnimation.js";
 import { filterSessions } from "./modules/renderData/filter-sessions.js";
 import { createSession } from "./modules/renderData/create-session.js";
+import { csvHandler } from "./modules/Backend/csv-handler.js";
 
 renderPopups();
 rederSessions(sessions);
@@ -32,3 +33,12 @@ popUpAnimation(
   "js-close-alert-btn",
   "show-allert"
 );
+
+popUpAnimation(
+  "js-open-create-data-set",
+  "js-create-new-dataset-holder",
+  "js-close-create-dataset-btn",
+  "on-create-session-overlay"
+);
+
+csvHandler();

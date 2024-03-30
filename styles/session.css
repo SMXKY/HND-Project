@@ -312,6 +312,7 @@
   margin-top: 0.5rem;
   font-weight: 500;
   min-width: 20vw;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 847px) {
@@ -415,4 +416,37 @@
   .dataset-title-text {
     font-size: 0.6rem;
   }
+}
+
+.upload-csv-btn {
+  display: block;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.upload-file-label {
+  display: flex;
+  margin-top: 0.5rem;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: var(--call-to-action);
+  padding: 0.5rem 0.5rem;
+  width: 6rem;
+  border-radius: 0.3rem;
+  color: white;
+  border: solid 1px var(--call-to-action);
+  transition: 0.3s;
+}
+
+.upload-file-label img {
+  object-fit: cover;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.upload-file-label:hover {
+  border: solid 1px white;
 }

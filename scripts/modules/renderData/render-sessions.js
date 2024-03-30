@@ -1,5 +1,7 @@
+import { sessions } from "../Backend/database/sessions.js";
 import { deleteSession } from "./delete-session.js";
 import { renderDatasets } from "./render-datasets.js";
+import { datasets } from "../Backend/database/datasets.js";
 
 export function rederSessions(array) {
   let sessionHtml = "";
@@ -27,6 +29,16 @@ export function rederSessions(array) {
         monthE = "0" + monthE;
       }
 
+      let setExist = false;
+      let sesh = session.datasets.length;
+
+      datasets.forEach((set) => {
+        if (set.sessionId === session.id) {
+          setExist = true;
+          sesh = set.datasets.length;
+        }
+      });
+
       sessionHtml += `
       <a href="#" class="view-all-sales-link">
         <div class="products-sales-recent-grid-actual-grid-entry sessions-grid-entry">
@@ -34,7 +46,7 @@ export function rederSessions(array) {
             <p>${session.sessionName}</p>
           </div>
   
-          <p class="responsive-table hide-datasets">${session.datasets.length}</p>
+          <p class="responsive-table hide-datasets">${sesh}</p>
           
           <p class="responsive-table2">${dayE}/${monthE}/${session.lastEdited.year}</p>
   

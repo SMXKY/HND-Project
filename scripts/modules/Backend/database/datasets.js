@@ -1,5 +1,7 @@
-export const datasets = [
-  {
+export const datasets =
+  JSON.parse(localStorage.getItem("datasetsDb")) ||
+  [
+    /*{
     id: 0,
     sessionId: 0,
     datasets: [
@@ -24,7 +26,7 @@ export const datasets = [
         date: {
           day: 2,
           month: 3,
-          year: 0,
+          year: 2024,
         },
         time: {
           hours: 13,
@@ -59,7 +61,7 @@ export const datasets = [
         name: "Joe Rogan Podcast data",
         date: {
           day: 2,
-          date: 3,
+          month: 3,
           year: 2024,
         },
         time: {
@@ -75,5 +77,5 @@ export const datasets = [
     id: 2,
     sessionId: 2,
     datasets: [],
-  },
-];
+  },*/
+  ];

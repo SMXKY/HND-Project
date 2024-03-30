@@ -253,11 +253,14 @@
           </div>
 
           <div class="session-options">
-            <button class="add-session-btn js-open-create-session">
+            <button class="add-session-btn js-open-create-data-set">
               <img src="images-and-icons/icons/add.png" alt="filter-icon" />
             </button>
 
-            <div class="view-all-sales filter-sessions js-open-filter">
+            <div
+              class="view-all-sales filter-sessions js-open-filter"
+              style="display: none"
+            >
               <p>Filter</p>
               <img src="images-and-icons/icons/filter (1).png" alt="" />
             </div>
@@ -294,7 +297,53 @@
       </div>
     </section>
 
+    <div
+      class="create-session-overlay create-data-set-overlay js-create-new-dataset-holder"
+    >
+      <div class="create-session-form">
+        <div class="create-session-head">
+          <button class="close-create-session-form js-close-create-dataset-btn">
+            <img src="images-and-icons/icons/close-red.png" alt="" />
+          </button>
+        </div>
+
+        <p class="create-session-title">Dataset name</p>
+
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Dataset name"
+          class="create-session-input js-input-dataset-name"
+        />
+
+        <div class="upload-file-btn">
+          <label for="js-uploaded-file" class="upload-file-label"
+            ><p>Upload file</p>
+            <img src="images-and-icons/icons/upload.png" alt="upload-icon"
+          /></label>
+          <input
+            type="file"
+            name=""
+            id="js-uploaded-file"
+            class="upload-csv-btn js-input-dataset-file"
+            style="display: none"
+          />
+        </div>
+
+        <div class="create-session-foot">
+          <button
+            class="create-session-btn js-create-new-dataset-store-btn js-submit-csv"
+          >
+            Create
+          </button>
+        </div>
+      </div>
+    </div>
+
     <button class="dummy" style="display: none" id="js-this-buton"></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <script src="scripts/sessions.js" type="module"></script>
   </body>
 </html>
