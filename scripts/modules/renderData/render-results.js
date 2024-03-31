@@ -1,6 +1,7 @@
 import { datasets } from "../Backend/database/datasets.js";
 import { frequency } from "../Backend/modules/frequency-and-percentage/frequencyAndPercentage.js";
 import { centralTendency } from "../Backend/modules/location/centralTendency.js";
+import { alert } from "./alert.js";
 
 export function renderResults() {
   document.querySelectorAll(".js-anlayze-data-btn").forEach((btn) => {
@@ -109,6 +110,51 @@ export function renderResults() {
         return findingsHtml;
       }
 
+      function download(id, name) {
+        const imageLink = document.createElement("a");
+        const image = document.getElementById(`${id}`);
+        imageLink.download = `${name}`;
+        imageLink.href = image.toDataURL("image/jpg", 1);
+
+        //document.write(`<img src="${imageLink}"/>`);
+
+        imageLink.click();
+      }
+
+      function convertHtmlToCanvas(element, id, name) {
+        html2canvas(document.querySelector(`.${element}`)).then((canvas) => {
+          const myCanvas = canvas;
+
+          myCanvas.id = id;
+
+          console.log(myCanvas);
+
+          const imageLink = document.createElement("a");
+          const image = myCanvas;
+          imageLink.download = `${name}`;
+          imageLink.href = image.toDataURL("image/jpg", 1);
+
+          //document.write(`<img src="${imageLink}"/>`);
+
+          imageLink.click();
+        });
+      }
+
+      function copyFindings(element) {
+        let text = element.innerText;
+        let inputElement = document.createElement("input");
+
+        inputElement.setAttribute("value", text);
+
+        document.body.appendChild(inputElement);
+
+        inputElement.select();
+        document.execCommand("copy");
+        inputElement.parentNode.removeChild(inputElement);
+      }
+
+      let count = 0;
+
       let resultsHtml = "";
       keys.forEach((key) => {
         resultsHtml += `
@@ -118,13 +164,13 @@ export function renderResults() {
         <div class="result-display-template-content">
           <div class="result-display-template-content-head">
             <p>Tabular representation</p>
-            <button>
+            <button class="js-download-table" data-tableid ="table- ${key}" data-table = "${key}" data-tablename = "js-my-table-${key}">
               <img src="images-and-icons/icons/download (1).png" alt="" />
             </button>
           </div>
 
           <div class="result-display-template-content-holder">
-            <div class="products-sales-recent-grid">
+            <div class="products-sales-recent-grid js-my-table-${key}" id="">
               <div
                 class="products-sales-recent-grid-head new-session-grid data-set-grid-head results-grid"
               >
@@ -145,7 +191,7 @@ export function renderResults() {
         <div class="result-display-template-content">
           <div class="result-display-template-content-head">
             <p>Graphical representation</p>
-            <button>
+            <button class = "js-download-graph" data-graphname = "${key}" data-graphid = "testChart-${key}">
               <img src="images-and-icons/icons/download (1).png" alt="" />
             </button>
           </div>
@@ -160,13 +206,17 @@ export function renderResults() {
         <div class="result-display-template-content">
           <div class="result-display-template-content-head">
             <p>Findings</p>
-            <button>
+            <button class="js-copy-findings" data-element = "results-findings-${
+              "key" + count
+            }">
               <img src="images-and-icons/icons/copy.png" alt="" />
             </button>
           </div>
 
           <div
-            class="result-display-template-content-holder results-findings-grid"
+            class="result-display-template-content-holder results-findings-grid results-findings-${
+              "key" + count
+            }"
           >
             ${renderResultsFindings(tendency[key])}
           </div>
@@ -174,12 +224,41 @@ export function renderResults() {
         <!---->
       </div>
         `;
+        count++;
       });
 
       document.querySelector(".js-result-container").innerHTML = resultsHtml;
 
       keys.forEach((key) => {
         renderResultsGraph(`testChart-${key}`, fequency[key]);
+      });
+
+      document.querySelectorAll(".js-download-graph").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          download(
+            `testChart-${btn.dataset.graphname}`,
+            `${btn.dataset.graphid} frequency and percetage graph`
+          );
+        });
+      });
+
+      document.querySelectorAll(".js-download-table").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          convertHtmlToCanvas(
+            btn.dataset.tablename,
+            btn.dataset.tableid,
+            `${btn.dataset.table} Frequency distribution table`
+          );
+        });
+      });
+
+      document.querySelectorAll(".js-copy-findings").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const el = document.querySelector(`.${btn.dataset.element}`);
+
+          copyFindings(el);
+          alert("valid", "Results findings successfully copied!!");
+        });
       });
 
       document
