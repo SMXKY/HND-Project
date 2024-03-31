@@ -36,7 +36,7 @@ export function cretedataset(sessionid, data, render) {
                 name: inputField.value,
                 date: {
                   day: new Date().getDate(),
-                  month: new Date().getMonth(),
+                  month: new Date().getMonth() + 1,
                   year: new Date().getUTCFullYear(),
                 },
                 time: {
@@ -53,14 +53,14 @@ export function cretedataset(sessionid, data, render) {
               });
 
               localStorage.setItem("datasetsDb", JSON.stringify(datasets));
-
-              render();
-
-              alert("valid", "Dataset successfully created");
-
               document
                 .querySelector(".js-create-new-dataset-holder")
                 .classList.remove("on-create-session-overlay");
+
+              alert("valid", "Dataset successfully created");
+              inputField.value = "";
+
+              render();
             } else {
               alert("error", "Dataset name already exist");
               inputField.value = "";

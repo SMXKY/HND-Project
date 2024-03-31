@@ -1,5 +1,6 @@
 export function validKeys(obj) {
   const allKeys = Object.keys(obj);
+
   const validKeys = [];
 
   allKeys.forEach((key) => {

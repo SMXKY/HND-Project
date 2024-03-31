@@ -27,12 +27,12 @@ export function createSession() {
             datasets: [],
             lastEdited: {
               day: new Date().getDate(),
-              month: new Date().getMonth(),
+              month: new Date().getMonth() + 1,
               year: new Date().getUTCFullYear(),
             },
             dateOfCreation: {
               day: new Date().getDate(),
-              month: new Date().getMonth(),
+              month: new Date().getMonth() + 1,
               year: new Date().getUTCFullYear(),
             },
           });

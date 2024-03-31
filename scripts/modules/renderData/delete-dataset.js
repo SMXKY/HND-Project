@@ -6,12 +6,12 @@ export function deleteDataset(render) {
       datasets[Number(btn.dataset.datasetid)].datasets.forEach((set, index) => {
         if (set.id === Number(btn.dataset.dataid)) {
           datasets[Number(btn.dataset.datasetid)].datasets.splice(index, 1);
+
+          render();
+          deleteDataset(render);
+          localStorage.setItem("datasetsDb", JSON.stringify(datasets));
         }
       });
-
-      render();
-      deleteDataset(render);
-      localStorage.setItem("datasetsDb", JSON.stringify(datasets));
     });
   });
 }

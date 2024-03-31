@@ -3,6 +3,7 @@ import { datasets } from "../Backend/database/datasets.js";
 import { cretedataset } from "./create-dataset-holder.js";
 import { csvHandler } from "../Backend/csv-handler.js";
 import { deleteDataset } from "./delete-dataset.js";
+import { renderResults } from "./render-results.js";
 
 export function renderDatasets() {
   document.querySelectorAll(".js-session-link").forEach((link) => {
@@ -83,7 +84,9 @@ export function renderDatasets() {
               
                       <p class="hide-data-first">${time}</p>
     
-                      <button class="analyze-data-btn">Analyze</button>
+                      <button class="analyze-data-btn js-anlayze-data-btn" data-seshid="${
+                        link.dataset.sessionid
+                      }" data-dataid = "${set.id}">Analyze</button>
               
                       <button class="delete-session-btn js-delte-single-dataset" data-dataid="${
                         set.id
@@ -94,7 +97,6 @@ export function renderDatasets() {
                   </a>
                 `;
               });
-              deleteDataset(renderDataFromDatset);
             } else {
               datasetHtml += `
                 <a href="#" class="view-all-sales-link">
@@ -109,6 +111,8 @@ export function renderDatasets() {
         });
 
         document.querySelector(".js-dataset-grid").innerHTML = datasetHtml;
+        deleteDataset(renderDataFromDatset);
+        renderResults();
       }
 
       renderDataFromDatset();

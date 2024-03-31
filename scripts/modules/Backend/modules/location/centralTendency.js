@@ -117,6 +117,5 @@ export function centralTendency(data) {
       standardError: standardError,
     };
   });
-  console.log(solution);
   return solution;
 }

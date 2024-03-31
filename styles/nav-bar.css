@@ -121,7 +121,8 @@
 .search-btn:hover,
 .profile-holder:hover,
 .view-all-sales:hover,
-.add-session-btn:hover {
+.add-session-btn:hover,
+.result-display-template-content-head button:hover {
   border: solid 1px var(--call-to-action);
   box-shadow: 0px 0px 6px rgba(40, 127, 113, 0.3);
 }

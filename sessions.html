@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="styles/nav-bar.css" />
     <link rel="stylesheet" href="styles/recent-products-and-gear.css" />
     <link rel="stylesheet" href="styles/session.css" />
+    <link rel="stylesheet" href="styles/results.css" />
   </head>
   <body>
     <nav class="nav-bar nav-bar-off">
@@ -341,9 +342,50 @@
       </div>
     </div>
 
-    <button class="dummy" style="display: none" id="js-this-buton"></button>
+    <section class="results js-results-all-holder">
+      <div class="results-box-holder">
+        <div class="results-box-head">
+          <p>Results</p>
+          <button class="js-close-results-column">
+            <img src="images-and-icons/icons/close-red.png" alt="" />
+          </button>
+        </div>
 
+        <div class="scroll-checker-results js-result-container"></div>
+      </div>
+    </section>
+    <button class="dummy" style="display: none" id="js-this-buton"></button>
+    <button class="test-dummy-button" style="display: none">Test</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <script src="scripts/sessions.js" type="module"></script>
+    <script>
+      /*const lineChart = document.getElementById("testChart");
+
+      const chart = new Chart(lineChart, {
+        type: "bar",
+        data: {
+          labels: ["Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sat"],
+          datasets: [
+            {
+              label: "DELL Latitude E5450",
+              backgroundColor: "#287f71",
+              borderColor: "#287f71",
+              data: [500, 25, 99, 90, 90, 50, 60],
+            },
+            {
+              label: "HP Slim Desktop S01-pF4055t PC",
+              backgroundColor: "#EB862A",
+              borderColor: "#EB862A",
+              data: [123, 205, 99, 90, 450, 250, 250],
+            },
+          ],
+        },
+        options: {
+          maintainAspectRatio: false,
+        },
+      });*/
+    </script>
   </body>
 </html>

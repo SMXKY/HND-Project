@@ -41,4 +41,11 @@ popUpAnimation(
   "on-create-session-overlay"
 );
 
+popUpAnimation(
+  "test-dummy-button",
+  "js-results-all-holder",
+  "js-close-results-column",
+  "reveal-results"
+);
+
 csvHandler();

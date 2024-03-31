@@ -18,7 +18,10 @@ export function filterSessions() {
       const selectSessions = [];
 
       sessions.forEach((sesh) => {
-        if (sesh.dateOfCreation.month === month) {
+        if (
+          sesh.dateOfCreation.month === month &&
+          sesh.dateOfCreation.year === year
+        ) {
           selectSessions.push(sesh);
         }
       });

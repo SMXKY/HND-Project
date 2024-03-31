@@ -450,3 +450,47 @@
 .upload-file-label:hover {
   border: solid 1px white;
 }
+
+.analyze-form {
+  display: flex;
+}
+
+.form-heading-analyze {
+  margin-top: 0.5rem;
+  min-width: 20vw;
+}
+
+.anlyze-form-head {
+  font-weight: 700;
+  color: var(--call-to-action);
+  font-size: 1.5rem;
+}
+
+.test-options {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  row-gap: 1rem;
+}
+
+.test-options p {
+  font-weight: 500;
+}
+
+.submit-user-form {
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+}
+
+.submit-user-form button {
+  padding: 0.5rem 2rem;
+}
+
+.test-options-check {
+  border: none;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  border: white;
+}
